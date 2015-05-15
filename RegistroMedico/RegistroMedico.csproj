@@ -61,9 +61,33 @@
     <Content Include="App_Data\CHAPI_log.ldf">
       <DependentUpon>CHAPI.mdf</DependentUpon>
     </Content>
+    <Content Include="consultaPaciente.aspx" />
+    <Content Include="menuPrincipal.aspx" />
+    <Content Include="Pacientes.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="consultaPaciente.aspx.cs">
+      <DependentUpon>consultaPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consultaPaciente.aspx.designer.cs">
+      <DependentUpon>consultaPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menuPrincipal.aspx.cs">
+      <DependentUpon>menuPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menuPrincipal.aspx.designer.cs">
+      <DependentUpon>menuPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pacientes.aspx.cs">
+      <DependentUpon>Pacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pacientes.aspx.designer.cs">
+      <DependentUpon>Pacientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

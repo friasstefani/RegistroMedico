@@ -49,12 +49,12 @@ namespace Bll
         public bool Insertar()
         {
             return conectar.EjecutarDB("Insert Into Datos(Nombre,apellido,Telefono,Celular,Direccion,cedula,sexo,ocupacion,fechanacimiento, fechaingreso ) Values ('" +
-                Nombre + "','" + Apellido + "','" + Telefono + "','" + Celular + "','" + Direccion + "','" + cedula + "','" + sexo + "','" + ocupacion + "','" + fechanacimiento + "','" + fechaingreso + "')");
+                Nombre + "','" + Apellido + "','" + Telefono + "','" + Celular + "','" + Direccion + "','" + cedula + "','" + sexo + "','" + ocupacion + "','" + fechanacimiento.ToString("MM/dd/yyyy") + "','" + fechaingreso.ToString("MM/dd/yyyy") + "')");
         }
 
         public bool Modificar(int Idpaciente)
         {
-            return conectar.EjecutarDB(" update Datos set Nombre ='" + Nombre + "',Apellido ='" + Apellido + "',Telefono ='" + Telefono + "',Celular ='" + Celular + "',Direccion ='" + Direccion + "',cedula ='" + cedula + "',sexo ='" + sexo + "',ocupacion ='" + ocupacion + "',fechanacimiento ='" + fechanacimiento + "',fechaingreso ='" + fechaingreso + "' where Idpaciente = '" + Idpaciente + "' ");
+            return conectar.EjecutarDB(" update Datos set Nombre ='" + Nombre + "',Apellido ='" + Apellido + "',Telefono ='" + Telefono + "',Celular ='" + Celular + "',Direccion ='" + Direccion + "',cedula ='" + cedula + "',sexo ='" + sexo + "',ocupacion ='" + ocupacion + "',fechanacimiento ='" + fechanacimiento.ToString("MM/dd/yyyy") + "',fechaingreso ='" + fechaingreso.ToString("MM/dd/yyyy") + "' where Idpaciente = '" + Idpaciente + "' ");
         }
 
         public bool Eliminar(int Idpaciente)

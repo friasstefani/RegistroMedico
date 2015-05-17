@@ -8,12 +8,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div style="margin-left: 40px">
     
         <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
             <Items>
                 <asp:MenuItem NavigateUrl="~/Pacientes.aspx" Text="Registrar Paciente" Value="Registrar Paciente"></asp:MenuItem>
-                <asp:MenuItem Text="Consultar Paciente" Value="Consultar Paciente"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/consultaPaciente.aspx" Text="Consultar Paciente" Value="Consultar Paciente"></asp:MenuItem>
             </Items>
         </asp:Menu>
     

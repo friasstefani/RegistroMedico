@@ -62,8 +62,10 @@
       <DependentUpon>CHAPI.mdf</DependentUpon>
     </Content>
     <Content Include="consultaPaciente.aspx" />
+    <Content Include="Icon.png" />
     <Content Include="menuPrincipal.aspx" />
     <Content Include="Pacientes.aspx" />
+    <Content Include="packages.config" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Filtrar"></asp:Label>
 &nbsp;&nbsp;
         <asp:DropDownList ID="DropDownListTipoFiltro" runat="server" Height="23px" Width="159px">
             <asp:ListItem>Nombre</asp:ListItem>
@@ -22,7 +22,7 @@
         <asp:Button ID="ButtonBuscar" runat="server" OnClick="ButtonBuscar_Click" Text="Buscar" />
         <br />
         <br />
-        <asp:GridView ID="GridViewConsulta" runat="server" AutoGenerateColumns="False" Height="137px" Width="850px">
+        <asp:GridView ID="GridViewConsulta" runat="server" AutoGenerateColumns="False" Height="145px" Width="877px">
             <Columns>
                 <asp:BoundField DataField="IdPaciente" HeaderText="Id" />
                 <asp:BoundField DataField="nombre" HeaderText="Nombre" />
@@ -32,10 +32,11 @@
                 <asp:BoundField DataField="celular" HeaderText="Celular" />
                 <asp:BoundField DataField="cedula" HeaderText="Cedula" />
                 <asp:BoundField DataField="fechanacimiento" HeaderText="Fecha Nacimiento" />
-                <asp:BoundField DataField="fechaingreso" HeaderText="Fechha de Ingreso" />
+                <asp:BoundField DataField="fechaingreso" HeaderText="Fecha de Ingreso" />
                 <asp:BoundField DataField="sexo" HeaderText="Sexo" />
                 <asp:BoundField DataField="ocupacion" HeaderText="Ocupacion" />
                 <asp:BoundField />
+                <asp:HyperLinkField DataNavigateUrlFields="IdPaciente" DataNavigateUrlFormatString="~/Pacientes.aspx?IdPaciente={0}" Text="Editar" />
             </Columns>
         </asp:GridView>
         <br />

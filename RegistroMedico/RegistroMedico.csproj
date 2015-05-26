@@ -62,10 +62,13 @@
       <DependentUpon>CHAPI.mdf</DependentUpon>
     </Content>
     <Content Include="consultaPaciente.aspx" />
+    <Content Include="consultaSistemas.aspx" />
+    <Content Include="EstadoPacientes.aspx" />
     <Content Include="Icon.png" />
     <Content Include="menuPrincipal.aspx" />
     <Content Include="Pacientes.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Sistema.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +78,20 @@
     </Compile>
     <Compile Include="consultaPaciente.aspx.designer.cs">
       <DependentUpon>consultaPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="consultaSistemas.aspx.cs">
+      <DependentUpon>consultaSistemas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consultaSistemas.aspx.designer.cs">
+      <DependentUpon>consultaSistemas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoPacientes.aspx.cs">
+      <DependentUpon>EstadoPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EstadoPacientes.aspx.designer.cs">
+      <DependentUpon>EstadoPacientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="menuPrincipal.aspx.cs">
       <DependentUpon>menuPrincipal.aspx</DependentUpon>
@@ -91,6 +108,13 @@
       <DependentUpon>Pacientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sistema.aspx.cs">
+      <DependentUpon>Sistema.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema.aspx.designer.cs">
+      <DependentUpon>Sistema.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\estefani.pubxml" />

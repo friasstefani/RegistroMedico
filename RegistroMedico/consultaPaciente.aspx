@@ -22,7 +22,7 @@
         <asp:Button ID="ButtonBuscar" runat="server" OnClick="ButtonBuscar_Click" Text="Buscar" />
         <br />
         <br />
-        <asp:GridView ID="GridViewConsulta" runat="server" AutoGenerateColumns="False" Height="145px" Width="877px">
+        <asp:GridView ID="GridViewConsulta" runat="server" AutoGenerateColumns="False" Height="145px" Width="877px" OnSelectedIndexChanged="GridViewConsulta_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField DataField="IdPaciente" HeaderText="Id" />
                 <asp:BoundField DataField="nombre" HeaderText="Nombre" />

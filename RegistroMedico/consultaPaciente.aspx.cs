@@ -30,5 +30,10 @@ namespace RegistroMedico
                 GridViewConsulta.DataBind();
             }
         }
+
+        protected void GridViewConsulta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

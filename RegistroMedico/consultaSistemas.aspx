@@ -1,13 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="consultaSistemas.aspx.cs" Inherits="RegistroMedico.consultaSistemas" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="consultaSistemas.aspx.cs" Inherits="RegistroMedico.consultaSistemas"MasterPageFile="~/PaginaMaestra.Master" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body style="height: 404px">
-    <form id="form1" runat="server">
+<asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">  
     <div>
     
         <asp:Label ID="Label1" runat="server" Text="Filtrar"></asp:Label>
@@ -31,6 +24,4 @@
                 <asp:HyperLinkField DataNavigateUrlFields="IdSistema" DataNavigateUrlFormatString="~/Sistema.aspx?IdSistema={0}" HeaderText="Editar" Text="Editar" />
             </Columns>
         </asp:GridView>
-    </form>
-</body>
-</html>
+    </asp:Content>  

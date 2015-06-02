@@ -61,17 +61,31 @@
     <Content Include="App_Data\CHAPI_log.ldf">
       <DependentUpon>CHAPI.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\Stefani.ldf">
+      <DependentUpon>Stefani.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Stefani.mdf" />
+    <Content Include="consultaEstado.aspx" />
     <Content Include="consultaPaciente.aspx" />
     <Content Include="consultaSistemas.aspx" />
     <Content Include="EstadoPacientes.aspx" />
     <Content Include="Icon.png" />
+    <Content Include="Login.aspx" />
     <Content Include="menuPrincipal.aspx" />
     <Content Include="Pacientes.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Script\jquery-1.10.2.min.js" />
     <Content Include="Sistema.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="consultaEstado.aspx.cs">
+      <DependentUpon>consultaEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consultaEstado.aspx.designer.cs">
+      <DependentUpon>consultaEstado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="consultaPaciente.aspx.cs">
       <DependentUpon>consultaPaciente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -93,6 +107,13 @@
     <Compile Include="EstadoPacientes.aspx.designer.cs">
       <DependentUpon>EstadoPacientes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="menuPrincipal.aspx.cs">
       <DependentUpon>menuPrincipal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -107,6 +128,13 @@
     <Compile Include="Pacientes.aspx.designer.cs">
       <DependentUpon>Pacientes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PaginaMaestra.Master.cs">
+      <DependentUpon>PaginaMaestra.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaMaestra.Master.designer.cs">
+      <DependentUpon>PaginaMaestra.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sistema.aspx.cs">
       <DependentUpon>Sistema.aspx</DependentUpon>
@@ -117,6 +145,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PaginaMaestra.Master" />
     <None Include="Properties\PublishProfiles\estefani.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

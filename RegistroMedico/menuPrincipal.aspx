@@ -1,13 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="menuPrincipal.aspx.cs" Inherits="RegistroMedico.menuPrincipal" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="menuPrincipal.aspx.cs" Inherits="RegistroMedico.menuPrincipal" MasterPageFile="~/PaginaMaestra.Master" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
     <div style="margin-left: 40px">
     
         <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" OnMenuItemClick="Menu1_MenuItemClick">
@@ -17,10 +11,10 @@
                 <asp:MenuItem NavigateUrl="~/Sistema.aspx" Text="Registro de sistema" Value="Registro de sistema"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/EstadoPacientes.aspx" Text="Registro de estado del paciente" Value="Registro de estado del paciente"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/consultaSistemas.aspx" Text="Consultar sistema" Value="Consultar sistema"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/consultaEstado.aspx" Text="Consulta de estado" Value="Consulta de estado"></asp:MenuItem>
             </Items>
         </asp:Menu>
     
     </div>
-    </form>
-</body>
-</html>
+    
+</asp:Content>

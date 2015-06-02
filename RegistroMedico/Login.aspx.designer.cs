@@ -10,51 +10,33 @@
 namespace RegistroMedico {
     
     
-    public partial class consultaSistemas {
+    public partial class Login {
         
         /// <summary>
-        /// Label1 control.
+        /// TextBoxUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxUsuario;
         
         /// <summary>
-        /// DropDownListTipoFiltro control.
+        /// TextBoxClave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListTipoFiltro;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxClave;
         
         /// <summary>
-        /// TextBoxFiltro control.
+        /// Buttonlogon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxFiltro;
-        
-        /// <summary>
-        /// ButtonBuscar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonBuscar;
-        
-        /// <summary>
-        /// GridViewConsulta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewConsulta;
+        protected global::System.Web.UI.WebControls.Button Buttonlogon;
     }
 }

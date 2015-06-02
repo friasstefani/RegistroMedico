@@ -102,5 +102,10 @@ namespace RegistroMedico
             else
                 return 0;*/
         }
+
+        protected void Buttonnuevo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/EstadoPaciente.aspx");
+        }
     }
 }

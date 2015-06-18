@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Bll;
+using System.Web.Security;
 
 namespace RegistroMedico
 {
@@ -12,6 +13,17 @@ namespace RegistroMedico
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (User.Identity.IsAuthenticated)
+                {
+
+                }
+                else
+                {
+                    FormsAuthentication.RedirectToLoginPage();
+                }
+            }
 
         }
 

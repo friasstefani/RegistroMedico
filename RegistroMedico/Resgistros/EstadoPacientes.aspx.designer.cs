@@ -49,6 +49,15 @@ namespace RegistroMedico {
         protected global::System.Web.UI.WebControls.TextBox FechaTextBox;
         
         /// <summary>
+        /// TextBoxId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxId;
+        
+        /// <summary>
         /// SistemasDropDownList control.
         /// </summary>
         /// <remarks>

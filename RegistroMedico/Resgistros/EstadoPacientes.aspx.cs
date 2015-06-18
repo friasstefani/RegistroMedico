@@ -6,12 +6,24 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Bll;
+using System.Web.Security;
 namespace RegistroMedico
 {
     public partial class EstadoPacientes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (User.Identity.IsAuthenticated)
+                {
+
+                }
+                else
+                {
+                    FormsAuthentication.RedirectToLoginPage();
+                }
+            }
             if (!IsPostBack)
             {
                 PacientesDropDownList.DataSource = Bll.Paciente.Lista("IdPaciente,Nombre", "IdPaciente > 0");
@@ -23,61 +35,71 @@ namespace RegistroMedico
                 SistemasDropDownList.DataValueField = "IdSistema";
                 SistemasDropDownList.DataTextField = "Nombre";
                 SistemasDropDownList.DataBind();
+
+                //    string idDetalle = Request.QueryString["IdDetalle"];
+
+                //    if (idDetalle != null)
+                //    {
+                //        BuscarDetalle(idDetalle);
+                //    }
+                //}
+            }
+        }
+
+        private void BuscarDetalle(string idDetalle)
+        {  
+            EstadoPaciente estado = new EstadoPaciente();
+            if (estado.Buscar(int.Parse(idDetalle)))
+            {
+                PacientesDropDownList.SelectedValue = estado.IdPaciente.ToString();
+                SistemasDropDownList.SelectedValue = estado.DetalledEstadoPaciente.ToString();
+                TextBoxId.Text = estado.IdEstado.ToString();
+                FechaTextBox.Text = estado.fecha.ToString("yyyy-MM-dd");
+                
+
+                DetalleGridView.DataSource = estado.DetalledEstadoPaciente;
+                DetalleGridView.DataBind();
             }
         }
         
 
         protected void AgregarButton_Click(object sender, EventArgs e)
         {
-            DataTable detalle = new DataTable();
+            EstadoPaciente estado = new EstadoPaciente();
 
-            if (Session["detalle"] == null)
+            if (Session["detalle"] != null)
             {
-                detalle.Columns.Add("IdSistema", typeof(int));
-                detalle.Columns.Add("NombreSistema", typeof(string));
-                detalle.Columns.Add("SituacionPaciente", typeof(string));
-            }
-            else
-            {
-                detalle = (DataTable)Session["detalle"];
+                estado = (EstadoPaciente)Session["detalle"];
             }
 
+            estado.AgregarDetalledEstadoPaciente(0, int.Parse(SistemasDropDownList.SelectedValue), SituacionPacienteTextBox.Text); 
 
-            DataRow row = detalle.NewRow();
-            row["IdSistema"] = SistemasDropDownList.SelectedValue;
-            row["NombreSistema"] = SistemasDropDownList.SelectedItem;
-            row["SituacionPaciente"] = SituacionPacienteTextBox.Text;
-            detalle.Rows.Add(row);
-
-            Session["detalle"] = detalle;
-            DetalleGridView.DataSource = detalle;
+            DetalleGridView.DataSource = estado.DetalledEstadoPaciente;
             DetalleGridView.DataBind();
+            Session["detalle"] = estado;
         }
 
         protected void GuardarEstadoButton_Click(object sender, EventArgs e)
         {
             EstadoPaciente estado = new EstadoPaciente();
+            if (Session["detalle"] != null)
+            {
+                estado = (EstadoPaciente)Session["detalle"];
+            }
 
             estado.IdPaciente = int.Parse(PacientesDropDownList.SelectedValue);
             estado.fecha = Convert.ToDateTime(FechaTextBox.Text);
 
-            if (Session["detalle"] != null)
+            if (estado.Insertar())
             {
-                DataTable detalle = new DataTable();
-                detalle = (DataTable)Session["detalle"];
-
-                foreach (DataRow dt in detalle.Rows)
-                {
-                    estado.AgregarDetalledEstadoPaciente(0, int.Parse(dt["IdSistema"].ToString()), dt["SituacionPaciente"].ToString());
-                }
-
-                if (estado.Insertar())
                     MsjLabel.Text = "Guardado correctamente";
             }
             else
             {
                 MsjLabel.Text = "no puede guardar un estado de paciente vacio";
             }
+            
+        
         }
 
         protected void Buttonelimina_Click(object sender, EventArgs e)
@@ -105,7 +127,7 @@ namespace RegistroMedico
 
         protected void Buttonnuevo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/EstadoPaciente.aspx");
+            Response.Redirect("/Registro/EstadoPaciente.aspx");
         }
     }
 }

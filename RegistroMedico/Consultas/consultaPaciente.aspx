@@ -1,17 +1,17 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="consultaPaciente.aspx.cs" Inherits="RegistroMedico.consultaPaciente" MasterPageFile="~/PaginaMaestra.Master" %>
 
-<asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server"> 
+<asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-    
+
         <asp:Label ID="Label1" runat="server" Text="Filtrar"></asp:Label>
-&nbsp;&nbsp;
+        &nbsp;&nbsp;
         <asp:DropDownList ID="DropDownListTipoFiltro" runat="server" Height="23px" Width="159px">
             <asp:ListItem>Nombre</asp:ListItem>
             <asp:ListItem>Apellido</asp:ListItem>
         </asp:DropDownList>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBoxFiltro" runat="server" Width="186px"></asp:TextBox>
-&nbsp;&nbsp;
+        &nbsp;&nbsp;
         <asp:Button ID="ButtonBuscar" runat="server" OnClick="ButtonBuscar_Click" Text="Buscar" />
         <br />
         <br />
@@ -29,10 +29,10 @@
                 <asp:BoundField DataField="sexo" HeaderText="Sexo" />
                 <asp:BoundField DataField="ocupacion" HeaderText="Ocupacion" />
                 <asp:BoundField />
-                <asp:HyperLinkField DataNavigateUrlFields="IdPaciente" DataNavigateUrlFormatString="~/Pacientes.aspx?IdPaciente={0}" Text="Editar" />
+                <asp:HyperLinkField DataNavigateUrlFields="IdPaciente" DataNavigateUrlFormatString="~/Resgistros/rPacientes.aspx?IdPaciente={0}" Text="Editar" />
             </Columns>
         </asp:GridView>
         <br />
-    
+
     </div>
-    </asp:Content>
+</asp:Content>

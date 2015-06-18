@@ -11,6 +11,8 @@
         <asp:Label ID="Label8" runat="server" Text="Fecha:" ToolTip=" "></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="FechaTextBox" runat="server" TextMode="Date" Width="167px"></asp:TextBox>
+        &nbsp;&nbsp; IdEstado&nbsp;
+        <asp:TextBox ID="TextBoxId" runat="server"></asp:TextBox>
         <br />
         <br />
         

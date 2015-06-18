@@ -5,14 +5,24 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Bll;
-
+using System.Web.Security;
 namespace RegistroMedico
 {
     public partial class consultaPaciente : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (User.Identity.IsAuthenticated)
+                {
 
+                }
+                else
+                {
+                    FormsAuthentication.RedirectToLoginPage();
+                }
+            }
         }
 
         protected void ButtonBuscar_Click(object sender, EventArgs e)

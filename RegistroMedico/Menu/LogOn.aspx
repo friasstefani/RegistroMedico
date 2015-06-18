@@ -1,8 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="RegistroMedico.Login" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <p>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LogOn.aspx.cs" Inherits="RegistroMedico.LogOn" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+     <p>
         Usuario&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBoxUsuario" runat="server" Width="140px"></asp:TextBox>
     </p>
@@ -16,4 +22,6 @@
     </p>
     <p>
         &nbsp;</p>
-</asp:Content>
+    </form>
+</body>
+</html>

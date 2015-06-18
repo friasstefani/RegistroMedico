@@ -5,10 +5,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Bll;
+using System.Web.Security;
+
 
 namespace RegistroMedico
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class LogOn : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,7 +20,10 @@ namespace RegistroMedico
         protected void Buttonlogon_Click(object sender, EventArgs e)
         {
             if (Usuario.Logon(TextBoxUsuario.Text, TextBoxClave.Text))
-                Response.Redirect("menuPrincipal.aspx");            
+            {
+                FormsAuthentication.RedirectFromLoginPage(TextBoxUsuario.Text, true);
+                Response.Redirect("/Menu/menuPrincipal.aspx");  
+            }
         }
     }
 }

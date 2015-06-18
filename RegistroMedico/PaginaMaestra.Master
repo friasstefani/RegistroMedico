@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestra.master.cs" Inherits="RegistroMedico.PaginaMaestra" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <script src="Script/jquery-1.10.2.min.js"></script>
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="font/css/font-awesome.css">
+
+
+
+
+    <script src="js/menu.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+
+
+        <div class="mainWrap">
+
+
+
+            <nav>
+                <ul class="menu">
+                    <li><a href="#"><i class="icon-home"></i>Registros</a>
+                        <ul class="sub-menu">
+                            <li><a href="/Resgistros/rPacientes.aspx">Registro Paciente</a></li>
+                            <li><a href="/Resgistros/Sistema.aspx">Registro de Sistema</a></li>
+                            <li><a href="/Resgistros/EstadoPacientes.aspx">Diagnostico</a></li>
+                            <li><a href="/Recetas/rRecetas.aspx">Registro de Receta</a></li>
+                            <li><a href="/Resgistros/Medicamento.aspx">Registro de Medicamento</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/Consultas/consultaPaciente.aspx"><i class="icon-user"></i>Consulta Paciente</a></li>
+                    <li><a href="/Consultas/consultaSistemas.aspx"><i class="icon-camera"></i>Consulta Sitema</a>
+                    <li><a href="/Consultas/consultaMedicamento.aspx"><i class="icon-camera"></i>Consulta Medicamento</a>
+
+
+                        <ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/Consultas/consultaEstado.aspx"><i class="icon-bullhorn"></i>Consulta Diagnostico</a></li>
+                    <li><a href="#"><i class="icon-envelope-alt"></i>
+                        <asp:LoginName ID="LoginName1" runat="server" />
+                    </a></li>
+                    <li><a href="#"><i class="icon-envelope-alt"></i>
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                    </a></li>
+                </ul>
+            </nav>
+
+        </div>
+        <!--end mainWrap-->
+
+        <div class="mainWrap">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+
+</body>
+</html>
